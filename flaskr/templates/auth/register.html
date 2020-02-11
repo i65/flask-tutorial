@@ -1,1 +1,15 @@
-f:\09python_work\06flask\flask-tutorial\flaskr\templates\auth
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form action="" method="post">
+    <label for="username">username</label>
+    <input type="text" id="username" name="username">
+    <label for="password">password</label>
+    <input type="password" id="password" name="password">
+    <input type="submit" value="Log In">
+  </form>
+{% endblock %}

@@ -30,7 +30,7 @@ def register():
 
     if error is None:
       db.execute(
-        'INSERT INTO user VALUEs (?, ?)', (username, generate_password_hash(password))
+        'INSERT INTO user (username, password) VALUES (?, ?)', (username, generate_password_hash(password))
       )
       db.commit()
       return redirect(url_for('auth.login'))
@@ -62,7 +62,7 @@ def login():
       return redirect(url_for('index'))
 
     flash(error)
-    return render_template('auth/login.html')
+  return render_template('auth/login.html')
 
 # 注册一个 在视图函数之前运行的函数，不论其 URL 是什么
 @bp.before_app_request

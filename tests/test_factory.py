@@ -1,1 +1,9 @@
-f:\09python_work\06flask\flask-tutorial\tests
+from flaskr import create_app
+
+def test_config():
+  assert not create_app().testing
+  assert create_app({'TESTING': True}).testing
+
+def test_hello(client):
+  response = client.get('/hello2')
+  assert response.data == b'Hello, World!'

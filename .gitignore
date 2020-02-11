@@ -11,4 +11,4 @@ htmlconv/
 
 dist/
 build/
-*.egg-into/
+*.egg-info/

@@ -1,1 +1,15 @@
-f:\09python_work\06flask\flask-tutorial\flaskr\templates\blog
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New post{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form action="" method="post">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" value="{{ request.form['title'] }}" required>
+    <label for="body">Body</label>
+    <textarea name="body" id="body" >{{ request.form['body'] }}</textarea>
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}
